@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let number;
+   do {
+        number = Number(prompt("Enter a valid number!"))
+
+    } while (isNaN(number) || number < 1)
+    alert(number + " is a valid number!")
+
+    console.log("Prints numbers from 1 to the users input")
+
+    for(let i = 1; i <= number; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
+            console.log( i + " FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log( i + " Fizz")
+        } else if (i % 5 === 0) {
+            console.log( i + " Buzz")
+        } else {
+            console.log(i)
+        }
+    }
+
+    // if(!isNaN(num)) {
+    //     console.log(input + " is a valid number!")
+    // } else {
+    //     console.log("sorry " +  input.toUpperCase() + " is not a valid number")
+    // }
+</script>
+</html>

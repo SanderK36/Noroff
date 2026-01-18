@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let favoriteFoods = ["Pizza", "Cheese Burger", "Kebab"]
+    console.log(favoriteFoods[0]);
+    console.log(favoriteFoods[2]);
+
+    favoriteFoods[1] = "Sushi";
+    console.log(favoriteFoods[1]);
+
+    console.log(favoriteFoods);
+
+    console.log(favoriteFoods[4])
+
+    favoriteFoods.unshift("Egg")
+    favoriteFoods.unshift("Baktpotet")
+    favoriteFoods.unshift("Pasta")
+    console.log(favoriteFoods)
+
+    favoriteFoods.pop([6])
+    console.log(favoriteFoods)
+
+    console.log("Activity 2")
+
+    let fruits = ["Apple", "Banana", "Kiwi"]
+
+    console.log(fruits)
+
+    console.log("There are " + fruits.length + " fruits in this array")
+
+    fruits.push("Melon")
+
+    console.log("Added Melon to the end of the array with push ")
+    console.log(fruits)
+
+    console.log("Added Strawberries at the start of the array with unshift ")
+
+    fruits.unshift("Strawberries")
+    console.log(fruits)
+
+    console.log("Removed the last item in the array with a .pop()")
+    fruits.pop()
+    console.log(fruits)
+
+    console.log("Removed the first item in the array with a .shift()")
+    fruits.shift()
+    console.log(fruits)
+
+    console.log("Now over to splice / slice")
+
+    let coldDrinks = ["Coke", "Fanta"];
+    let hotDrinks = ["Tea", "Coffee"];
+    let allDrinks = [...coldDrinks, ...hotDrinks];
+    console.log(allDrinks);
+
+    const favorites = allDrinks.slice(1, 3);
+    console.log(favorites);
+    console.log(allDrinks);
+
+    snacks = ["Chips", "Popcorn", "Nuts"];
+    snacks.splice(2, 0, "Fruit");
+    console.log(snacks);
+
+    const desserts = ["Cake", "Pie", "Ice Cream", "Brownie"];
+    const removedDesserts = desserts.splice(1, 2);
+    console.log(removedDesserts)
+    console.log(desserts)
+
+    const mains = ["Burger", "Pizza", "Pasta"];
+
+    mains.splice(1, 1, "salad", "soup");
+    console.log(mains)
+
+
+</script>
+</html>

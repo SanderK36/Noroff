@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let temperature = 15;
+    let isRaining = true;
+    let hasJacket = false;
+
+    // Jacket Advice
+    if (temperature < 5) {
+        console.log("It's freezing!");
+    } else if (temperature < 15) {
+        if(hasJacket) {
+            console.log("You'll be fine with your jacket!");
+        } else {
+            console.log("Better grab a jacket!");
+        }
+    }
+
+    // Rain reminder
+    if (isRaining && !hasJacket) {
+        console.log("And don't forget an umbrella!");
+    } else if (!isRaining && temperature >= 15) {
+        console.log("Looks like a nice day!")
+    }
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    let battery = 100;
+
+    while (battery > 0) {
+        console.log("Battery at: " + battery + "%");
+        battery -= 10; // battery decreases by 10% each iteration
+    }
+
+    console.log("a while loop that counts from 1 to 10:");
+
+    // A while loop that mimics a for loop counting from 1 to 10
+
+    let i = 1;
+    while (i <= 10) {
+        console.log(i);
+        i++;
+    }
+
+    console.log("same loop but in a for loop:")
+
+    //This is what it would look like as a for loop
+    for (let i = 0; i <= 10; i++) {
+        console.log(i)
+    }
+
+    //While loop activity: Write a while loop that keeps prompting the user for a positive number, then returns the square of that number in an alert.
+    //Hints: use Number() and isNaN().
+    //The suqare of a number can be found by multiplying the number by itself.
+
+    let number;
+
+    do{
+        number = Number(prompt("Please enter a positive number:"));
+    } while (isNaN(number) || number <= 0);
+
+    alert("The square of " + number + " is " + (number * number) + ".");
+
+    console.log("While loop that prints odd numbers between 1 - 11, excluding 5")
+
+    /*Create a loop that prints the odd numbers between 1 and 11 (inclusive), excluding 5.
+    Your loop must:
+
+    Use a while (true) loop
+    Use continue to skip even numbers and 5
+    Use break to exit the loop once the number exceeds 10
+    
+    Start with the following structure:
+    */
+    let j = 1;
+    while (true) {
+        if (j > 11) {
+            break;
+        }
+
+        if (j % 2 === 0 || j === 5) {
+            j++
+            continue;
+        }
+
+        console.log(j);
+        j++
+    }
+
+
+</script>
+</html>

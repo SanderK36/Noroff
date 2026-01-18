@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let age = 20;
+    let hasTicket = true;
+    let isStudent = false;
+
+    let oldEnough = age >= 18; // true
+    console.log("Old enough:" + oldEnough);
+
+    let canEnter = age >= 18 && hasTicket; // true
+    console.log("Can enter:" + canEnter);
+
+    let discount = age <= 25 || isStudent;
+    console.log("Discount:" + discount);
+
+    let notStudent = !isStudent;
+    console.log("Not a student:" + notStudent);
+
+    let canEnterWitchTicketOrStudent = age >= 18 && (hasTicket || isStudent);
+    console.log("Can enter with ticket or student:" + canEnterWitchTicketOrStudent);
+</script>
+</html>
