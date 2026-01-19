@@ -81,5 +81,27 @@
     console.log(mains)
 
 
+    const pets = ["dog", "cat", "parrot", "hamster"]
+
+    for (let i = 0; i < fruits.length; i++) {
+        console.log("Pet: " + (i + 1) + ": " + pets[i])
+    }
+
+    for (const pet of pets) {
+        console.log("I wish i had a " + pet + ".")
+    }
+
+    const seatingChart = [
+        ["A1", "A2", "A3", "A4"],
+        ["B1", "B2", "B3", "B4"],
+        ["C1", "C2", "C3", "C4"]
+    ]
+
+    for (let row = 0; row < seatingChart.length; row ++) {
+        for (let col = 0; col < seatingChart[row].length; col++) {
+            console.log("Checking seat:" + seatingChart[row][col])
+        }
+    }
+
 </script>
 </html>

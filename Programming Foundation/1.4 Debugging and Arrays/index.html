@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let pens = [
+        ["🐶", "🐶", "🐶"],
+        ["🐱", "🐱"],
+        ["🐰"]
+    ];
+
+    for (let i = 0; i < pens.length; i++) {
+        let pen = pens[i]
+        let message = "Pen " + i + " has " + pen.length + " animals: ";
+
+        for(let j = 0; j < pen.length; j ++) {
+            message += pen[j] + " ";
+        }
+        console.log(message)
+    }
+
+    // Updated list
+    console.log("Updated list")
+
+    pens[0].push("🐶");
+
+    pens[1].pop();
+
+    pens[1] = [...pens[1], ...pens[2]];
+
+    pens[2] = [];
+
+   for (let i = 0; i < pens.length; i++) {
+        let pen = pens[i]
+        let message = "Pen " + i + " has " + pen.length + " animals: ";
+
+        for(let j = 0; j < pen.length; j ++) {
+            message += pen[j] + " ";
+        }
+        console.log(message)
+    }
+</script>
+
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+</html>
