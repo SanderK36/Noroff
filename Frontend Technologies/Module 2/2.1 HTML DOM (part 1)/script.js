@@ -1,24 +1,23 @@
-function randomColor() {
-    var random = Math.random();
+setInterval(() =>{
+    if(Math.random() > 0.5){
+        document.getElementById("para1").style.fontSize = "50px";
+    } else {
+        document.getElementById("para1").style.fontSize = "10px";
+    }
+}, 5000)
 
-    if(random < 1/3){
+setInterval(() => document.getElementById("para2").innerHTML = "Date: " + Date(), 10000)
+
+function randomColor(){
+    const r = Math.random();
+
+    if(r < 1/3 ) {
         return "yellow";
+    } else if (r < 2/3) {
+        return "magenta";
+    } else {
+        return "cyan";
     }
-
-    else if(random < 2/3) {
-        return "magneta";
-    }
-    return "cyan";
 }
 
-setInterval(() => {
-    currentFont = window.getComputedStyle(document.getElementById("para1")),
-    null.getPropertyValue(font-size);
-
-    parsedFont = parseFloat(currentFont.slice(0, -2));
-    document.getElementById("para1").stylle.fontSize = (Math.random() > 0.5 ? parsedFont * 2 : parsedFont / 2).toString() + "px";
-}, 5000)
-setInterval(() => document.getElementById("para2").innerHTML = "Date : " + Date(), 1000)
-
-setInterval(() =>
-document)
+document.getElementById("para3").style.backgroundColor = randomColor();
