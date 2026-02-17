@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let rawName = '  Luna LoveGOOD ';
+    let rawMessage = 'hello! i need HELP. i repeat, I need HELP!! please respond. ';
+
+    let trimmedName = rawName.trim();
+    let nameParts = trimmedName.split(' ');
+    let firstName = nameParts[0];
+    let lastName = nameParts[1];
+
+    let formattedFirstName = firstName[0].toUpperCase() + firstName.slice(1).toLowerCase();
+    let formattedLastName = lastName[0].toUpperCase() + lastName.slice(1).toLowerCase();
+    let formattedName = `${formattedFirstName} ${formattedLastName}`;
+
+    let message = rawMessage.trim();
+    message = message.replaceAll(/help/gi, 'assistance');
+
+    message = message[0].toUpperCase() + message.slice(1);
+
+    console.log('cleaned name:', formattedName);
+    console.log('cleaned message:', message)
+
+    let containsPlease = message.includes('please');
+    let endsWithPeriod = message.endsWith('.')
+
+    let words = message.split(" ");
+    let lastWord = words[words.length -1].replace(/[^a-zA-Z]/g, '');
+    console.log("The last word:", lastWord);
+    
+    
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    simple quiz game:
+    1. Store questions and answers in an array of objects.
+    2. Loop through each question and use prompt() to get the player’s answer.
+    3. Keep track of the score in an object with a method addPoint().
+    4. At the end, display the score.
+    5. (Optional) Use setTimeout to delay showing the final score for dramatic effect.
+    */
+
+   const quiz = [
+    {question: "what is js short for?", asnwer: "Javascript"},
+    {question: "what is 2 + 2?", asnwer: "4"},
+    {question: "Capitol of France?", asnwer: "Paris"},
+    {question: "Best football team in the world?", asnwer: "Bayern"},
+   ]
+   
+   const points = {
+    userPoints: 0,
+    addPoints() {
+        this.userPoints++
+    }
+   }
+
+   for (let item of quiz) {
+    let userAnswer = prompt(item.question)
+
+    if(userAnswer === item.answer) {
+        console.log("Riktig!")
+        points.addPoints()
+        console.log("+1 poeng")
+    } else {
+        console.log("Feil. Prøv igjen")
+    }
+   }
+
+    console.log("Beregner resultatet...");
+
+    setTimeout(() => {
+        console.log(`Du fikk totalt ${points.userPoints} poeng!`);
+    }, 2000);
+</script>
+</html>

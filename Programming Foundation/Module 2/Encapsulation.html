@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Read through it carefully, then in a comment block at the end of the script, explain where you see each of the four OOP pillars (encapsulation, inheritance, abstraction, and polymorphism) in this example. You do not need to mark the exact line numbers - just describe which parts of the example demonstrate each pillar.
+    class Spacecraft {
+  constructor(name, crew) {
+    this.name = name;
+    this._crew = crew;
+  }
+  launch() {
+    return `${this.name} is launching with ${this._crew} crew members.`;
+  }
+}
+
+class CargoShip extends Spacecraft {
+  constructor(name, crew, cargoCapacity) {
+    super(name, crew);
+    this.cargoCapacity = cargoCapacity;
+  }
+  loadCargo(amount) {
+    return `${this.name} is loading ${amount} tons of cargo.`;
+  }
+  launch() {
+    return `${this.name} is launching with ${this.cargoCapacity} tons of cargo space.`;
+  }
+}
+
+const explorer = new Spacecraft("Explorer One", 5);
+const hauler = new CargoShip("Galactic Hauler", 8, 300);
+
+console.log(explorer.launch());
+console.log(hauler.launch());
+console.log(hauler.loadCargo(120));
+
+/*
+    1. encapsulation:
+       The _crew property is intended to be private, keeping the crew data hidden.
+       The launch() and loadCargo() methods controls how the object's data is accessed and used.
+
+    2. inheritance:
+       The CargoShop class extends spacecraft, reusing the name and _crew properties and the structure provided by the Spacecraft class.
+
+    3. abstraction:
+       The launch() and loadCargo() methods let us use high-level commands without needing to know the internal implementation details of how launching or loading cargo works.
+    
+    4. polymorphism:
+       The cargoship class overrides the launch() method from spacecraft, providing a different version of the method that includes cargo information.
+       Both spacecraft and cargoship respond to launch(), but in different ways.
+
+*/
+</script>
+</html>

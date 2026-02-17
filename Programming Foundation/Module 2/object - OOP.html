@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // Book object example
+    let book = {
+        title: "The Warriors",
+        author: "Sol Yurick",
+        numOfPages: 212,
+    }
+
+    console.log(book.title);
+    console.log(book['numOfPages']);
+    book.title = "The Warriors: A Novel";
+    console.log(book.title);
+   
+    for (let info in book) {
+        console.log(`${info}: ${book[info]}`);
+    }
+
+    console.log("-----------------------------------------");
+
+   // Give it two properties: a brand and a battery level (number from 0 to 100).
+
+    //Add a method that increases the battery level by 10 and logs the new battery level.
+
+    //Log the phone’s brand using dot notation.
+
+    //Call the method twice using bracket notation.
+
+    //Update the method so that it logs "Battery full!" if the battery level reaches 100 or more, otherwise logs the new battery level.
+
+    //Call the updated method until "Battery full!" is displayed.
+
+    // Smart Phone object example
+    const phone = {
+        //properties
+        brand: "Apple",
+        battery: 50,
+
+        //method
+        charge: function() {
+            this.battery += 10;
+            console.log(`Battery level: ${this.battery}%`);
+        },
+    }
+
+    console.log(phone.brand);
+
+    phone["charge"]();
+    phone["charge"]();
+    
+    phone.charge = function() {
+        this.battery += 10;
+        if (this.battery >= 100) {
+            this.battery = 100;
+            console.log("Battery full!");
+        } else {
+            console.log(`Battery level: ${this.battery}%`);
+        }
+    }
+
+    phone.charge();
+    phone.charge();
+    phone.charge();
+    
+
+    console.log("-----------------------------------------");
+
+    //1. Create an album object using literal syntax with title and artist properties.
+    //2. Create a constructor function Album(title, artist) that assigns both to this, then create an instance called myAlbum using new.
+    //3. Add a method summary to myAlbum that returns a string using this.title and this.artist, and log its result.
+    //4. Add a new property (e.g., year) to myAlbum after creation and log it.
+    //5. Add a property to the constructor function itself (Album.defaultFormat = "digital") and show that myAlbum.defaultFormat is undefined.
+
+    const album = {
+        title: "Hardwired... to Self-Destruct",
+        artist: "Metallica",
+    }
+    console.log("[1] album:", album);
+
+    function Album(title, artist) {
+        this.title = title;
+        this.artist = artist;
+    }
+
+    const myAlbum = new Album("Ride the Lightning", "Metallica");
+    console.log("[2] myAlbum:", myAlbum);
+
+    myAlbum.summary = function() {
+        return `${this.title} by ${this.artist}`;
+    }
+
+    console.log("[3] Album Summary:", myAlbum.summary());
+
+    myAlbum.year = 1984;
+    console.log("[4] Album Year:", myAlbum.year);
+
+    Album.defaultFormat = "digital";
+    console.log("[5] myAlbum.defaultFormat:", myAlbum.defaultFormat); // undefined
+
+
+ console.log("-----------------------------------------");
+
+ //1. Create a constructor function Recipe(name, servings) that assigns both to this.
+ //2. Create two instances: recipeA and recipeB with different values.
+ //3. Add a shared method describe on Recipe.prototype (use a regular function).
+ //4. Call describe on both instances and log the results.
+//5 Show that describe is shared and inherited: log recipeA.describe === recipeB.describe, and use hasOwnProperty (or Object.hasOwn) to show that name is own but describe is not.
+
+function recipe(name, servings) {
+    this.name = name;
+    this.servings = servings;
+}
+
+const recipeA = new recipe("Pancakes", 4);
+const recipeB = new recipe("Spaghetti Bolognese", 6);
+
+recipe.prototype.describe = function() {
+    return `${this.name} serves ${this.servings} people.`;
+}
+
+console.log("recipeA describe:", recipeA.describe());
+console.log("recipeB describe:", recipeB.describe());
+
+console.log("-----------------------------------------");
+
+
+// 1. Create a trip object with properties: destination, days, and country.
+// 2. Use destructuring to extract destination and days into variables, then log them.
+// 3.Destructure country but rename it to tripCountry, then log it.
+// 4. Destructure a cost property with a default value of "Unknown" and log it.
+// 5. Write a function printTrip that takes a destructured object parameter with destination and days, and logs "Trip to <destination> for <days> days" when called with the trip object.
+
+// Bonus: Give destination and days default values in the printTrip function. Then pass different objects to see how it reacts: { destination: "Oslo" } or { days: 10 }
+
+const trip = {
+    destination: "Paris",
+    days: 7,
+    country: "France",
+};
+
+const { destination, days } = trip;
+console.log("Destination:", destination);
+console.log("Days:", days);
+
+const { country: tripCountry } = trip;
+console.log("Trip Country:", tripCountry);
+const { cost = "Unknown" } = trip;
+console.log("Cost:", cost);
+
+function printTrip({ destination = "Unknown", days = 0 } = {}) {
+    console.log(`Trip to ${destination} for ${days} days`);
+}
+
+
+
+// 1. Create a class Animal with a constructor that sets a name property and a method speak() that returns "<name> makes a noise".
+// 2. Create a class Dog that extends Animal. In its constructor, call super(name) and also set a breed property.
+// 3. Add a new method to Dog called fetch() that returns "<name> is fetching the ball".
+// 4. Override the speak() method in Dog so it returns "<name> barks".
+// 5. Create an instance of Dog and call its speak() and fetch() methods, logging the results.
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        return `${this.name} makes a noise`;
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, breed) {
+        super(name)
+        this.breed = breed
+    }
+
+    fetch() {
+        return `${this.name} is fetching the ball`
+    }
+
+    speak() {
+        return `${this.name} barks`
+    }
+}
+
+const myDog = new Dog ("Rex", "German shepherd")
+console.log(myDog.speak())
+console.log(myDog.fetch())
+</script>
+</html>

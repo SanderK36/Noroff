@@ -1,0 +1,74 @@
+.header {
+    width: 50%;
+}
+
+.blueParagraph {
+    color: blue;
+}
+.box1{
+    border: 1px solid black;
+}
+
+.pMargin {
+   margin: 2px 20px 5px 10px;
+}
+
+.box2{
+    border: 1px solid black;
+}
+
+.pPadding {
+    padding: 10px 20px 2px 5px;
+}
+
+.big {
+    font-size: 200%;
+}
+
+.green {
+    background-color: green;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.peopleTable, th, td {
+    border: 2px dashed red;
+}
+
+.peopleTable, th {
+    padding: 10px;
+}
+
+.positioned {
+    position: fixed;
+    left: 400px;
+    top: 400px;
+}
+
+.lorem {
+    width: 150px;
+    height: 100px;
+    overflow-x: scroll;
+}
+
+.lorem2 {
+    width: 150px;
+    margin: auto;
+    position: absolute;
+    right: 0px;
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}

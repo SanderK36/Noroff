@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Given the array of numbers below, use filter(), map(), and reduce() to: 
+    //  1. Keep only numbers greater than 5.
+    //  2. Double each of those numbers.
+    //  3. Add them all together.
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const filteredHigherThan5 = numbers.filter(num => num > 5);
+    const doubledNumbers = filteredHigherThan5.map(num => num * 2);
+    const sum = doubledNumbers.reduce((acc, curr) => acc + curr, 0);
+
+    console.log("Numbers greater than 5:", filteredHigherThan5);
+    console.log("Doubled numbers:", doubledNumbers);
+    console.log("Sum of doubled numbers:", sum);
+
+
+    // Chained together
+    const total = numbers
+        .filter(num => num > 5)
+        .map(num => num * 2)
+        .reduce((acc, curr) => acc + curr, 0);
+        console.log(total);
+</script>
+</html>

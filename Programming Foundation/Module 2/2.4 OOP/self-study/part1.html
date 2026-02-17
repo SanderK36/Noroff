@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    Functions:
+    1. Create a function sayHello that takes a name and returns "Hello, {name}!".
+    2. Create a function that takes an object { firstName, lastName } using object destructuring and returns a string in the format "lastName, firstName".
+    3. Create a function sumAll that takes any number of numeric arguments and returns their sum.
+    4. Write a function multiply that has two parameters with default values (e.g. 1), and returns their product.
+    */
+
+    function sayHello(name) {
+        return `Hello, ${name}!`;
+    }
+
+    console.log(sayHello("Alice")); //Hello, Alice!
+
+    function formatName({ firstName, lastName }) {
+        return `${lastName}, ${firstName}`;
+    }
+
+    console.log(formatName({ firstName: "John", lastName: "Doe" })); //Doe, John
+
+    function sumAll(...numbers) {
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+
+    console.log(sumAll(1, 2, 3, 4, 5)); //15
+
+    function multiply(a = 1, b = 1) {
+        return a * b;
+    }
+    console.log(multiply(5, 4)); //20
+
+
+    /*
+    Array Methods:
+    1. Given numbers = [1, 2, 3, 4, 5], use .map() to create a new array where each number is doubled.
+    2. Given an array of strings, filter out any that have fewer than 5 characters.
+    3. Use .reduce() to sum an array of prices and return the total.
+    */
+
+    const numbers = [1, 2, 3, 4, 5];
+    const doubled = numbers.map(num => num * 2);
+    console.log(doubled); //[2, 4, 6, 8, 10]
+
+    const strings = ["Bayern", "Barca", "Real Madrid", "Rosenborg", "PSG"]
+    const longStrings = strings.filter(str => str.length >= 5);
+    console.log(longStrings); //["Bayern", "Real Madrid", "Rosenborg"]
+
+    const prices = [10.99, 5.49, 20.00, 3.75];
+    const total = prices.reduce((acc, price) => acc + price, 0); 
+    console.log(total); //40.23
+
+    /*
+    Map & Set:
+    1. Create a Set from [1, 2, 2, 3, 4, 4] and log its size.
+    2. Create a Map of 3 products with their prices. Retrieve the price for one of them and log it.
+    3. Convert a Map into an array of [key, value] pairs.
+    */
+
+    const numSet = new Set([1, 2, 2, 3, 4, 4]);
+    console.log(numSet.size); //4
+
+    const productMap = new Map([
+        ["Apple", 1.2],
+        ["Banana", 0.5],
+        ["Orange", 0.8]
+    ]);
+    console.log(productMap.get("Banana")); //0.5
+
+    const mapArray = Array.from(productMap);
+    console.log(mapArray); //[["Apple", 1.2], ["Banana", 0.5], ["Orange", 0.8]]
+
+    /*
+    sorting:
+    1. Sort [5, 2, 9, 1] in ascending order.
+    2. Sort an array of strings by length (shortest first).
+    */
+
+    const unsortedNumbers = [5, 2, 9, 1];
+    const sortedNumbers = unsortedNumbers.sort((a, b) => a - b);
+    console.log(sortedNumbers); //[1, 2, 5, 9]
+
+    const stringArray = ["apple", "fig", "banana", "kiwi", "cherry"];
+    const sortedByLength = stringArray.sort((a, b) => a.length - b.length);
+    console.log(sortedByLength); //["fig", "kiwi", "apple", "banana", "cherry"]
+
+    /*
+    Objects & OOP:
+   1. Create an object student with properties name and age, and a method introduce() that logs "Hi, my name is {name}".
+   2. Use a constructor function to create Book objects with title and author.
+   3. Add a printSummary() method to Book using the prototype.
+   4. Create a class called Car with make, model, and a method drive() that logs "Vroom!".
+    */
+
+    const student = {
+        name: "Emily",
+        age: 22,
+        introduce() {
+            console.log(`Hi, my name is ${this.name}`);
+        }
+    };
+    student.introduce(); //Hi, my name is Emily
+
+    function Book(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    Book.prototype.printSummary = function() {
+        console.log(`${this.title} by ${this.author}`);
+    };
+
+    const book1 = new Book("1984", "George Orwell");
+    book1.printSummary(); //1984 by George Orwell
+
+    /*
+    Async (setTimeout / setInterval):
+    1. Use setTimeout to log "Hello after 3 seconds".
+    2. Use setInterval to count from 1 to 5, then stop.
+    */
+    setTimeout(() => {
+        console.log("Hello after 3 seconds");
+    }, 3000);
+
+    let count = 1;
+    const intervalId = setInterval(() => {
+        console.log(count);
+        if (count === 5) {
+            clearInterval(intervalId);
+        }
+        count++;
+    }, 1000);
+</script>
+</html>

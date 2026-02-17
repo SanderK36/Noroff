@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function formatName(name, formatter) {
+        return formatter(name);
+    }
+
+    const titleCase = name => name[0].toUpperCase() + name.slice(1).toLowerCase();
+    const shout = name => name.toUpperCase();
+    const whisper = name => name.toLowerCase();
+
+    console.log(formatName("kari", whisper))
+</script>
+</html>

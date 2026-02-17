@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1. Create a class Animal with a constructor that sets a name property and a method speak() that returns "<name> makes a noise".
+// 2. Create a class Dog that extends Animal. In its constructor, call super(name) and also set a breed property.
+// 3. Add a new method to Dog called fetch() that returns "<name> is fetching the ball".
+// 4. Override the speak() method in Dog so it returns "<name> barks".
+// 5. Create an instance of Dog and call its speak() and fetch() methods, logging the results.
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        return `${this.name} makes a noise`;
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, breed) {
+        super(name)
+        this.breed = breed
+    }
+
+    fetch() {
+        return `${this.name} is fetching the ball`
+    }
+
+    speak() {
+        return `${this.name} barks`
+    }
+}
+
+const myDog = new Dog ("Rex", "German shepherd")
+console.log(myDog.speak())
+console.log(myDog.fetch())
+</script>
+</html>

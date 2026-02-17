@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let message = 'please confirm your email email to continue'
+
+    console.log(message)
+
+    let newMessage = message.replace('please', 'kindly')
+
+    console.log(newMessage)
+
+    console.log(newMessage.replaceAll('email email', 'email'))
+
+    let sliceContinue = newMessage.slice(-8)
+    let substringContinue = newMessage.substring(newMessage.length - 8)
+
+    console.log(sliceContinue)
+    console.log(substringContinue)
+
+    console.log(newMessage.toUpperCase())
+</script>
+</html>

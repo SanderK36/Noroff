@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    /*
+    Shopping Cart Simulator:
+   1. Create an array of products (objects with name and price).
+   2. Use .filter() to get products above a certain price.
+   3. Use .map() to apply a discount to all prices.
+   4. Use .reduce() to calculate the total cost of the cart.
+   5. Store selected products in a Set so the cart has no duplicates.
+    */
+
+   const products = [
+    {name: "Redbull", price: 25},
+    {name: "Burn", price: 20},
+    {name: "Egg", price: 40},
+    {name: "Milk", price: 22},
+   ]
+
+   console.log("Produkter over 20 kr:")
+   const expensiveProducts = products.filter(product => product.price > 20);
+   expensiveProducts.forEach(product => console.log(product));
+
+
+   console.log("Produkter med 10% rabatt:")
+    const discountedProducts = products.map(product => {
+     return {name: product.name, price: product.price * 0.9};
+    })
+    discountedProducts.forEach(product => console.log(product));
+
+    const totalCost = products.reduce((acc, product) => acc + product.price, 0);
+    console.log(totalCost); //85
+
+    const cart = new Set();
+    cart.add(products[0]);
+    cart.add(products[1]);
+    cart.add(products[0]); //duplicate, won't be added
+    console.log("Produkter i handlekurven:");
+    cart.forEach(product => console.log(product));
+
+    
+
+
+   
+   
+</script>
+</html>

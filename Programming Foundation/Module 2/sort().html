@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const fruitPrices=[10, 5, 15, 7];
+
+    // 1. Alphabetical (A–Z)
+    fruits.sort();
+    console.log("A-Z:", fruits);
+
+    // 2. Reverse alphabetical (Z–A)
+    fruits.sort((a, b) => b.localeCompare(a));
+    console.log("Z-A:", fruits);
+
+    //3. Prices: Low -> High
+    fruitPrices.sort((a, b) => a - b);
+    console.log("Low -> High:", fruitPrices);
+
+    //4. Prices: High -> Low
+    fruitPrices.sort((a, b) => b - a);
+    console.log("High -> Low:", fruitPrices);
+</script>
+</html>

@@ -1,0 +1,22 @@
+body {
+    background-image: url(../imgs/pikapika.jpg);
+    background-size: cover;
+}
+
+.btn {
+    background-color: green;
+    height: 70px;
+    width: 70px;
+}
+
+.inline {
+    display: inline;
+}
+
+#heading
+{
+    text-align: center;
+    font-family: cursive;
+    color: purple;
+    font-size: 70px;
+}

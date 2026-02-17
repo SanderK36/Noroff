@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let input = prompt("Enter a number:");
+    let number = Number(input);
+
+    function getValidNumber() {
+        while (isNaN(number)) {
+            input = prompt("That's not a number. Try again.");
+            number = Number(input);
+        }
+        console.log("You entered:", number)
+    }
+
+    // const userNumber = getValidNumber();
+    // consol.log("You entered:", userNumber);
+
+    getValidNumber();
+
+    console.log("=======================")
+
+    function greetUser(name){
+        console.log("Hello " + name + "!")
+    }
+
+    function greetManyUsers(...names) {
+        for(const name of names) {
+            greetUser(name)
+        }
+    }
+
+    greetManyUsers("Ola", "Kari", "Knut");
+
+
+    console.log("=======================")
+    function shoutHello() {
+        console.log("HELLO!")
+    };
+
+    const whisperHello = function () {
+        console.log("hello...")
+    };
+
+    shoutHello();
+    whisperHello();
+
+    let saySomething = shoutHello;
+    saySomething();
+
+    saySomething = whisperHello();
+    saySomething();
+
+</script>
+</html>
