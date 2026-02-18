@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="google()">click me for google</button>
+    <button onclick="goBack()">click me to go back</button>
+</body>
+<script>
+    function google() {
+        window.location.href = "https://www.google.com";
+    }
+
+    function goBack() {
+        if (history.length > 5) {
+            history.go(-5);
+        }
+        else {
+            history.go(-(history.length - 1));
+        }
+    }
+</script>
+</html>

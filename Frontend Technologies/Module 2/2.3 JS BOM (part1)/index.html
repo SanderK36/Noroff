@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="newWindow()">Click me for a new window</button>
+    <button onclick="smallWindow()">Click me for a smaller window</button>
+    <button onclick="showUrl()">Click me to show url</button>
+    <button onclick="back()">Back</button>
+    <button onclick="next()">next</button>
+    <a href="https://www.google.com">Google</a>
+</body>
+
+<script>
+
+    let myWindow = null;
+
+    function newWindow() {
+        myWindow = window.open("", "", "width = 800, height = 800")
+    }
+
+    function smallWindow() {
+        if(myWindow != null) {
+            //Resize existing window
+            myWindow.resizeTo(myWindow.innerWidth/2, myWindow.innerHeight/2)
+        }
+    }
+
+    function showUrl() {
+       setTimeout(() => {
+        alert(window.location.pathname)
+       }, 5000)
+    }
+
+    function back() {
+        window.history.back();
+    }
+
+    function next() {
+        window.history.forward();
+    }
+</script>
+</html>
