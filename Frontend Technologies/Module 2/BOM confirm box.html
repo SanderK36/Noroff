@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./sweetalert2@11.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="confirmBox()">Click me for a checkbox</button>
+    <button onclick="namePrompt()">Click me for a prompt</button>
+    <p id="demo"></p>
+
+    <script>
+        function confirmBox() {
+            let txt;
+
+            if(swal.fire({title: "You pressed a button!", showDenyButton: true, confirmButtonText: "Okay",})) {
+                txt = "You pressed OK!"
+            } else {
+                txt = "You pressed Cancel!"
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+
+        async function namePrompt() {
+            const person = await swal.fire({
+                title: "Please enter your name",
+                input: "text",
+            })
+            let txt;
+            if(person.isDismissed || person.value === "") {
+                txt = "User cancelled the prompt"
+            } else {
+                txt = `Hello ${person.value}! How are you today?`;
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
