@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Task 1: Create a text paragraph. Create a button that changes the paragraph's font size to 16px, font family to Comic Sans MS and font colour to blue.  -->
+     <p id="text">Task1</p>
+     <button onclick="changeTask1()">Task 1</button>
+    <script>
+        function changeTask1() {
+            let text = document.getElementById("text");
+            text.style.fontSize = "16px";
+            text.style.fontFamily = "Comic Sans MS";
+            text.style.color = "blue";
+        }
+    </script>
+</body>
+</html>

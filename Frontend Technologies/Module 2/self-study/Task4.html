@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a table containing two columns: Name and Surname. Create a button that adds a new row at the beginning, with values ‘New Name’ as the name and ‘New Surname’ as the surname. -->
+     <table id="myTable">
+        <tr>
+            <td>John</td>
+            <td>Smith</td>
+        </tr>
+
+        <tr>
+            <td>Jim</td>
+            <td>Doe</td>
+        </tr>
+     </table>
+
+     <button onclick="insertRow()">Insert row</button>
+     <script>
+        function insertRow() {
+            let table = document.getElementById("myTable").insertRow(0);
+            let name = table.insertCell(0)
+            let lastName = table.insertCell(1)
+            name.innerHTML = "New Name";
+            lastName.innerHTML = "New Lastname";
+        }
+     </script>
+</body>
+</html>

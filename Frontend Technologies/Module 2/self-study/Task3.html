@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../sweetalert2@11.js"></script>
+</head>
+<body>
+    <!-- Create a link and set its Href, target and type attributes. Create a button showing the value of these attributes in an alert. -->
+    <p><a id="link1" type="text/html" target="_blank" href="https://google.com">Click me</a></p>
+    <button onclick="getAttri()">Show attributes</button>
+    <script>
+        function getAttri() {
+            let href = document.getElementById("link1").href;
+            swal.fire(`The href is: ${href}`);
+
+            let target = document.getElementById("link1").target;
+             swal.fire(`The target is: ${target}`);
+
+            let type = document.getElementById("link1").type;
+            swal.fire(`The type is: ${type}`);
+        }
+    </script>
+</body>
+</html>
