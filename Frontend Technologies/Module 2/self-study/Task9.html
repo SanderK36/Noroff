@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="displayBulbasaur()">Bulbasaur</button>
+    <button onclick="displayPikachu()">Pikachu</button>
+
+    <script>
+        function displayBulbasaur() {
+            let bulbasaur = new Image();
+            bulbasaur.src = "https://cdn.pixabay.com/photo/2018/04/13/16/13/pixel-3316924_960_720.png"
+            bulbasaur.width = "235";
+            bulbasaur.height = "220";
+            displayNewImage(bulbasaur);
+        }
+
+        function displayPikachu() {
+            let pikachu = new Image();
+            pikachu.src = "https://cdn.pixabay.com/photo/2016/09/09/11/59/pokemon-1656997_960_720.png"
+            pikachu.width = "240";
+            pikachu.height = "200";
+            displayNewImage(pikachu);
+        }
+
+        function displayNewImage(newImage) {
+            let images = document.getElementsByTagName("img");
+            for (let p = 0; p < images.length; p++) {
+                images[0].parentNode.removeChild(images[0]);
+            }
+
+            document.body.appendChild(newImage);
+        }
+    </script>
+</body>
+</html>

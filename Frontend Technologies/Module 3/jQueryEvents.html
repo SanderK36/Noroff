@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.js"></script>
+</head>
+<body>
+    <p class="classA">First paragraph</p>
+    <p class="classA">Second paragraph</p>
+    <p class="classB" id="para3">Third paragraph</p>
+    <p class="classB" id="para4" lang="en-us">Fourth paragraph</p>
+    <p class="classB" id="para5" lang="en-gb">Fifth paragraph</p>
+
+    <button id="onButton">On Button</button>
+    <button id="offButton">Off Button</button>
+
+    <!-- Task:
+     create An On button with an event that, when clicked, changes all paragraphs’ font size to 30px.
+
+     An Off button with an event that, when clicked, removes the styling added by the On button event. -->
+
+    <script>
+        $(function () {
+            $('#onButton').click(function () {
+                $('p').css('font-size', '30px');
+            })
+            $('#offButton').click(function () {
+                $('p').removeAttr('style');
+            })
+        })
+    </script>
+</body>
+</html>

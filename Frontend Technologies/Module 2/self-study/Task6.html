@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a button that creates the table of the provided size after a click. Get information about the size from the user via prompts. After creating the table, hide the button. -->
+
+    <table id="myTable"></table>
+    <button id="createButton" onclick="createTable()">Create the table</button>
+
+    <script>
+        function createTable(){
+            rowNumber = window.prompt("Input number of rows", 1);
+            columnNumber = window.prompt("Input number of columns", 1);
+
+            for(let r = 0; r < parseInt(rowNumber, 10); r++){
+                let row = document.getElementById("myTable").insertRow(r);
+                for(let c = 0; c < parseInt(columnNumber, 10); c++){
+                    var cell = row.insertCell(c);
+                    cell.innerHTML="Row-" + r + " column-" + c;
+                }
+            }
+
+            createButton.style.visibility = "hidden";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.js"></script>
+</head>
+<body>
+    <p id="para1">Paragraph 1</p>
+    <p id="para2">Paragraph 2</p>
+    <p id="para3">Paragraph 3</p>
+    <p id="para4">Paragraph 4</p>
+    <button id="anim1">Animation 1</button>
+    <button id="anim2">Animation 2</button>
+    <button id="anim3">Animation 3</button>
+
+    <script>
+        $(function() {
+            $('#para1').hover(function() {
+                $(this).fadeTo("slow", 0.1)
+            })
+        })
+
+        $(function() {
+            $('#anim1').click(function() {
+                $("#para2").animate({
+                    padding: 0,
+                    marginTop: 20,
+                    marginBottom: 11,
+                    marginLeft: 0,
+                    marginRight: 0,
+                    fontSize: 24,
+                }, "slow")
+            })
+
+            $('#anim2').click(function() {
+                $("#para3").animate({
+                    padding: 10,
+                    margin: 10
+                }, "fast")
+            })
+
+            $('#anim3').click(function() {
+                $("#para4").animate({
+                    fontSize: "30px"
+                }, "fast")
+            })
+        })
+    </script>
+</body>
+</html>

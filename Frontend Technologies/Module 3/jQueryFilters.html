@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="example">
+        <p class="classA" id="para1">The first paragraph</p>
+        <p>The second paragraph</p>
+        <p class="classB" id="para3">The third paragraph</p>
+        <p class="classB" id="para4" lang="en-us">The fourth paragraph</p>
+        <p class="classA" id="para5" lang="en-gb">The fifth paragraph</p>
+    </div>
+
+    <script>
+        $("document").ready(function(){
+            $("p[class]:odd").css("text-align", "right")
+            $("p:odd[class]").css("background-color", "yellow");
+            //No elements changed their color as there is no element fitting the condition
+            $("p:contains('Th'):first-child").css("background-color", "yellow");
+
+            var elm = $("#para3");
+            elm.prev().css("background-color", "yellow")
+            elm.next().next().css("background-color", "blue")
+        });
+    </script>
+</body>
+</html>

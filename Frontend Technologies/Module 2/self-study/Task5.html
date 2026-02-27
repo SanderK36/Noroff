@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a table containing two columns: Name and Surname, and three rows of data. Create a button that changes the text of the chosen cell after a click. The user should specify the text and cell index via prompt. -->
+
+    <table id="myTable">
+        <tr>
+            <td>John</td>
+            <td>Smith</td>
+        </tr>
+
+        <tr>
+            <td>Thomas</td>
+            <td>Morris</td>
+        </tr>
+
+        <tr>
+            <td>James</td>
+            <td>Hetfield</td>
+        </tr>
+    </table>
+    <button onclick="modifyCell()">Modify table cell</button>
+
+    <script>
+        function modifyCell(){
+            const rowNumber = window.prompt("Select row to change color (0, 1, 2, 3):", "0");
+            const columnNumber = window.prompt("Select cell to change color (0, 1,):", "0");
+            const content = window.prompt("Input new cell text");
+
+            let row = document.getElementById("myTable").rows[parseInt(rowNumber, 10)].cells;
+            row[parseInt(columnNumber, 10)].innerHTML = content;
+        }
+    </script>
+</body>
+</html>

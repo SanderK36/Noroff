@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Move mouse to see what happens!</p>
+    <img onmouseover="highlight()" onmouseout="disableHighlight()" src="https://cdn.pixabay.com/photo/2016/09/09/11/59/pokemon-1656997_960_720.png" alt="Pikachu">
+
+    <p>
+        Lorem ipsum dolor sit amet. <i>Lorem ipsum dolor sit amet.</i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem debitis inventore repudiandae commodi, ipsa magnam? <i>Lorem ipsum dolor sit.</i>
+    </p>
+    <script>
+        let italicItems;
+
+        window.onload = getItalicItems();
+
+        function getItalicItems() {
+            italicItems = document.getElementsByTagName('i')
+        }
+
+        function highlight() {
+            for (let i = 0; i < italicItems.length; i++) {
+                italicItems[i].style.color = "blue";
+            }
+        }
+
+        function disableHighlight() {
+            for (let i = 0; i < italicItems.length; i++) {
+                italicItems[i].style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>

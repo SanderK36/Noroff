@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a dropdown list and add a button that removes the selected element. -->
+    <select id="gamesSelect">
+        <option>Overwatch</option>
+        <option>World of Warcraft</option>
+        <option>Ocarina of Time</option>
+        <option>Diablo</option>
+    </select>
+
+    <button id="createButton" onclick="removeSelected()">Remove selected option</button>
+
+    <script>
+        function removeSelected(){
+            let x = document.getElementById("gamesSelect");
+            x.remove(x.selectedIndex);
+        }
+    </script>
+</body>
+</html>

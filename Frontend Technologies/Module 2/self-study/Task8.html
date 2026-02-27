@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="printSize()" onresize="printSize()">
+    <script>
+        function printSize(){
+            let width = document.documentElement.clientWidth;
+            let height = document.documentElement.clientHeight;
+            console.log("=================================")
+            console.log("New size:")
+            console.log("width: " + width)
+            console.log("height: " + height)
+            console.log("=================================")
+        }
+    </script>
+</body>
+</html>
