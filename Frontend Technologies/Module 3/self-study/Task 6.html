@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- use jQuery to hide all paragraphs on their click. -->
+         <p class="classA">First paragraph.</p]>
+         <p class="classA">The second paragraph.</p>
+         <p class="classB" id="para3">The third paragraph.</p>
+         <p class="classB" id="para4" lang="en-us">The fourth paragraph.</p>
+         <p class="classA" id="para5" lang="en-gb">The fifth paragraph.</p>
+
+         <script>
+            $(function() {
+                $("p").click(function() {
+                    $(this).hide()
+                })
+            })
+         </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- use jQuery to make our On button add an event that hides all paragraphs on click and an Off button removing this event. -->
+        <p class="classA">First paragraph.</p>
+        <p class="classA">The second paragraph.</p>
+        <p class="classB" id="para3">The third paragraph.</p>
+        <p class="classB" id="para4" lang="en-us">The fourth paragraph.</p>
+        <p class="classA" id="para5" lang="en-gb">The fifth paragraph.</p>
+
+        <button id="onButton">On</button>
+        <button id="offButton">Off</button>
+
+        <script>
+           $(function() {
+            $("#onButton").click(function(){
+                $("p").click(hide)
+            })
+            $("#offButton").click(function(){
+                $("p").off("click", hide);
+            })
+            function hide() {
+                $(this).hide()
+            }
+           })
+        </script>
+</body>
+</html>

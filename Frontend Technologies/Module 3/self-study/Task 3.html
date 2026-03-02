@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- use jQuery to selects the paragraph containing “Th” and is the first of its type. Set its background colour to yellow. -->
+
+    <div id="example">
+            <div class="classA">First paragraph.</div>
+            <p class="classA">The second paragraph.</p>
+            <p class="classB" id="para3">The third paragraph.</p>
+            <p class="classB" id="para4" lang="en-us">The fourth paragraph.</p>
+            <p class="classA" id="para5" lang="en-gb">The fifth paragraph.</p>
+        </div>
+
+        <script>
+            $("document").ready(function() {
+                $("p:contains('Th'):first-of-type").css("background-color", "yellow")
+            })
+        </script>
+</body>
+</html>

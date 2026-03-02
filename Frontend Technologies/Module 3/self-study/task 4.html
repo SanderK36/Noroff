@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- Task:
+                Select the para3 element and, using traversing, change the first ‘paragraph’s’ background colour to yellow and the fourth paragraph’s to blue. -->
+    <div id="example">
+        <p >The first paragraph.</p>
+        <div>The second paragraph.</div>
+        <p id="para3">The third paragraph.</p>
+        <p>The fourth paragraph.</p>
+        <div>The fifth paragraph.</div>
+    </div>
+
+    <script>
+        $("document").ready(function() {
+            $("#para3").prev().prev().css("background-color", "yellow")
+            $("#para3").next().css("background-color", "blue")
+        })
+    </script>
+</body>
+</html>

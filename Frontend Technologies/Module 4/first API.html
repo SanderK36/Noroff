@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol class="info">
+        
+    </ol>
+    <script>
+        let request = new XMLHttpRequest();
+
+        request.open("get", "https://hplussport.com/api/products")
+
+        request.onload = function(){
+            let respone = request.response;
+            let parsedData = JSON.parse(respone);
+            console.log(parsedData);
+            for(let i = 0; i < parsedData.length; i++){
+                let item = document.createElement("li");
+                item.textContent = parsedData[i].name;
+                document.querySelector(".info").appendChild(item);
+            }
+        }
+
+        request.send();
+    </script>
+</body>
+</html>

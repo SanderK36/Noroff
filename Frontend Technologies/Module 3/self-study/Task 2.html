@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- Use jQuery to:
+                        sets the background colour of all elements having any class, to green;
+
+                        changes the font size of all paragraphs inside div to 20px;
+
+                        adds 10px of left padding to all paragraphs that are even children of their parent and have the lang attribute specified;
+                        
+                        adds 10px of top padding to all paragraphs that are even from all children of their parent having the lang attribute specified. -->
+        
+        <p class="classA">The first paragraph.</p>
+        <p class="classB">The second paragraph.</p>
+        <p>The third paragraph.</p>
+        <p lang="en-us">The fourth paragraph.</p>
+        <p lang="en-gb">The fifth paragraph.</p>
+        <div id="example">
+            <p id="para1" class="classA">The first paragraph.</p>
+            <p class="classB">The second paragraph.</p>
+            <p id="para3">The third paragraph.</p>
+            <p id="para4" lang="en-us">The fourth paragraph.</p>
+            <p id="para5" lang="en-gb">The fifth paragraph.</p>
+        </div>
+        <div id="example2">
+            <p class="classA">The first paragraph.</p>
+            <p class="classB">The second paragraph.</p>
+            <p>The third paragraph.</p>
+            <p lang="en-us">The fourth paragraph.</p>
+            <p lang="en-gb">The fifth paragraph.</p>
+        </div>
+
+        <script>
+            $("document").ready(function(){
+            $("[class]").css("background-color", "green")
+            $("div p").css("font-size", "20px")
+            $("p[lang]:even").css("padding-left", "10px")
+            $("p:even[lang]").css("padding-top", "10px")
+        })
+        </script>
+</body>
+</html>

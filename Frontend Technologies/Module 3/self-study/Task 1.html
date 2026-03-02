@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- 
+    Use jQuery to perform the following tasks:
+    sets the background colour of all classA elements to green;
+    changes the font size of all paragraphs to 20px;
+    adds 10px of left padding to the fourth paragraph. -->
+
+    <div id="example">
+        <p id="para1" class="classA">The first Paragraph</p>
+        <p class="classB">The second Paragraph</p>
+        <p id="para3">The third Paragraph</p>
+        <p id="para4" lang="en-us">The fourh Paragraph</p>
+        <p id="para5" lang="en-gb">The fifth Paragraph</p>
+    </div>
+
+    <script>
+        $("document").ready(function(){
+            $(".classA").css("background-color", "green")
+            $("p").css("font-size", "20px")
+            $("#para4").css("padding-left", "10px")
+        })
+    </script>
+</body>
+</html>

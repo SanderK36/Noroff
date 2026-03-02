@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div class="img"></div>
+    <script>
+        $.ajax({
+            url: "https://api.giphy.com/v1/gifs/trending?api_key=XySWRaJTw7HyKYbbnHbThCzSaak8uSv9",
+            success: function(response){
+                console.log(response);
+                if (respone.data.user != null) {
+                    var originalUrl = response.data.images.original.url;
+                    $("body").append("<img srx = '" + originalUrl +"'></img>")
+                }
+            },
+            error: function() {
+                console.log("Something went wrong!")
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+    
+</head>
+<body>
+    <!--Having the same HTML file as in task 8, make the button on click change its width to 200px in 5 seconds. -->
+    <button id="widthButton">Change Width</button>
+    <script>
+        $(function() {
+            $("#widthButton").click(function() {
+                $(this).animate({width: "200px"}, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
