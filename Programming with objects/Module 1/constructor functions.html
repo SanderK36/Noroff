@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Class
+        class MyClass {
+            constructor(name, numberName, smallName, smallName2, status) {
+                this.name = name;
+                this.numberName = numberName;
+                this.smallObject = {
+                    smallName1: smallName1,
+                    smallName2: smallName2
+                }
+                this.myStatus = status;
+            }
+            myFunc = function(statusValue) {
+                    this.myStatus = statusValue
+            }
+        }
+
+        //Object Constructor Function
+        function MyFunction(name, numberName, smallName1, smallName2, status) {
+                this.name = name;
+                this.numberName = numberName;
+                this.smallObject = {
+                    smallName1: smallName1,
+                    smallName2: smallName2
+                }
+                this.myStatus = status;
+                this.myFunc = function(statusValue) {
+                    this.myStatus = statusValue
+                }
+        }
+
+        const object = new MyFunction("Sander", 20, "Sander", "Karlsen", "Hey")
+        console.log(object)
+    </script>
+</body>
+</html>

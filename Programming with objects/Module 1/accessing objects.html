@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addNewProperty1()">button 1</button>
+    <button onclick="addNewProperty2()">button 2</button>
+    <script>
+        const myObject = {}
+
+        function addNewProperty1() {
+            myObject.new = 10
+            console.log(myObject)
+        }
+
+        function addNewProperty2() {
+            delete myObject.new
+            console.log(myObject)
+        }
+    </script>
+</body>
+</html>

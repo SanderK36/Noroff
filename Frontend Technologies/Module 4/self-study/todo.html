@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            justify-content: center;
+            align-items: center;
+            margin-top: 25%;
+            margin-left: 30%;
+        }
+
+        li {
+            padding: 5px 5px 5px 5px;
+        }
+
+        li button {
+            margin-left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="container">
+     <div class="todo">
+        <ul> </ul>
+    </div>
+
+    <input id="input" type="text"><button>Add</button>
+   </div>
+
+    <script>
+        const inputField = document.getElementById("input")
+        const addButton = document.querySelector("button")
+        const ul = document.querySelector("ul")
+        let todo = []
+
+        function getInputValue() {
+            return inputField.value.trim()
+        }
+
+        function clearInput() {
+            inputField.value = ""
+        }
+
+        function createTaskElement(task) {
+            const li = document.createElement("li")
+            li.textContent = task
+
+            const button = document.createElement("button")
+            button.textContent = "Delete"
+            button.addEventListener("click", function() {
+                li.remove()
+            })
+            li.appendChild(button)
+            return li
+        }
+
+        function addTodo() {
+            const task = getInputValue()
+            if (!task) return
+
+            todo.push(task)
+            console.log(todo)
+            
+            const li = createTaskElement(task)
+            ul.appendChild(li)
+            clearInput()
+        }
+
+        addButton.addEventListener("click", addTodo)
+
+
+
+
+
+
+
+       
+        // function addTodo(){
+        //     let input = document.getElementById("input").value
+        //     todo.push(input)
+        //     console.log(todo)
+        //     let ul = document.getElementsByTagName("ul")[0]
+        //     let li = document. let todo = []createElement("li")
+        //     li.textContent = input
+        //     ul.appendChild(li)
+        //     document.getElementById("input").value = ""
+        //     let button = document.createElement("button")
+        //     button.textContent = "Delete"
+        //     li.appendChild(button)
+        //     button.addEventListener("click", function(){
+        //         this.parentElement.remove()
+        //     })
+
+
+            
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="update()">Update a number</button>
+    <button onclick="myObject.sum()">sum</button>
+    <button onclick="myObject.multiply()">multiply</button>
+    <script>
+        const myObject = {
+            num1: 1,
+            num2: 2,
+            sum: function() {
+                console.log(this.num1 + this.num2)
+            },
+            multiply: function() {
+                console.log(this.num1 * this.num2)
+            }
+        }
+
+        function update() {
+            const name = prompt("what number do you want to change?")
+            if(myObject[name] != null){
+                const newValue = prompt("please give a new value")
+                if(!isNaN(newValue)) {
+                    myObject[name] = newValue;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

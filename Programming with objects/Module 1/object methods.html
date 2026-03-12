@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="incrBtn">Increment</button>
+    <button id="decrBtn">Decrement</button>
+    <script>
+        const value = {
+            startValue: 0,
+            increment: function() {
+                this.startValue++;
+                console.log(this.startValue)
+            },
+            decrement: function() {
+                this.startValue--;
+                console.log(this.startValue)
+            },
+        }
+        document.getElementById("incrBtn").onclick = function () {
+            value.increment()
+        }
+
+         document.getElementById("decrBtn").onclick = function () {
+            value.decrement()
+        }
+    </script>
+</body>
+</html>
