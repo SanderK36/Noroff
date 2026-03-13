@@ -8,15 +8,49 @@
 <body>
     <script>
         //Class
-
-        //Object constructor
-        const dog = {
-            name: "rex",
-            age: 5,
-            bark: function () {
-                console.log("Bark bark!")
+        class Dog {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            bark() {
+                console.log("Class dog is barking")
+            }
+            birth() {
+                let today = new Date();
+                return today.getFullYear() - this.age;
             }
         }
+
+        //Object constructor
+        function objDog (name, age) {
+            this.name = name
+            this.age = age
+            this.bark = function () {
+                console.log("Obj dog is barking")
+            }
+            this.birth = function () {
+                let today = new Date();
+                return today.getFullYear() - this.age;
+            }
+        }
+        
+        //Implementation
+        const classDog = new Dog("Rex", 500);
+        classDog.bark();
+        console.log("Class dog birthyear: " + classDog.birth())
+
+        const myDog = new objDog("Storm", 18);
+        myDog.bark();
+        console.log("Obj dog birthyear: " + myDog.birth())
+
+        // const dog = {
+        //     name: "rex",
+        //     age: 5,
+        //     bark: function () {
+        //         console.log("Bark bark!")
+        //     }
+        // }
     </script>
 </body>
 </html>
